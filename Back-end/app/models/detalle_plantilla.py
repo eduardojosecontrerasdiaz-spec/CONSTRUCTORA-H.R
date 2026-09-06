@@ -1,18 +1,18 @@
 from app.config.database import db
 
 
-class DetallePresupuesto(db.Model):
-    __tablename__ = "detalle_presupuesto"
+class DetallePlantilla(db.Model):
+    __tablename__ = "detalle_plantilla"
 
-    id_detalle = db.Column(
+    id_detalle_plantilla = db.Column(
         db.Integer,
         primary_key=True,
         autoincrement=True
     )
 
-    id_presupuesto = db.Column(
+    id_plantilla = db.Column(
         db.Integer,
-        db.ForeignKey("presupuesto.id_presupuesto"),
+        db.ForeignKey("plantilla.id_plantilla"),
         nullable=False
     )
 
