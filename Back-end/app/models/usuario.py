@@ -50,3 +50,13 @@ class Usuario(db.Model):
         nullable=False,
         default=lambda: datetime.now(timezone.utc)
     )
+
+    rol = db.relationship(
+        "Rol",
+        back_populates="usuarios"
+    )
+
+    codigos_recuperacion = db.relationship(
+        "CodigoRecuperacion",
+        back_populates="usuario"
+    )

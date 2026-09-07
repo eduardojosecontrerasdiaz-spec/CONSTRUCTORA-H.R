@@ -34,3 +34,14 @@ class Rol(db.Model):
         nullable=False,
         default=datetime.utcnow
     )
+
+    usuarios = db.relationship(
+        "Usuario",
+        back_populates="rol"
+    )
+
+    permisos = db.relationship(
+        "Permiso",
+        secondary="rol_permiso",
+        back_populates="roles"
+    )

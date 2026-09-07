@@ -39,3 +39,8 @@ class CodigoRecuperacion(db.Model):
         nullable=False,
         default=False
     )
+
+    usuario = db.relationship(
+        "Usuario",
+        back_populates="codigos_recuperacion"
+    )
