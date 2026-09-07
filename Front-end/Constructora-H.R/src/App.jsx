@@ -1,8 +1,3 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
@@ -14,8 +9,6 @@ import { PlantillasPage } from './pages/plantillas/PlantillasPage';
 import { PreciosPage } from './pages/precios/PreciosPage';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <AuthProvider>
       <BrowserRouter>
