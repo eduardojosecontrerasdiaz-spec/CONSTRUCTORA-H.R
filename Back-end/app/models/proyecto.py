@@ -49,3 +49,13 @@ class Proyecto(db.Model):
         nullable=False,
         default=lambda: datetime.now(timezone.utc)
     )
+
+    usuario = db.relationship(
+        "Usuario",
+        back_populates="proyectos"
+    )
+
+    presupuestos = db.relationship(
+        "Presupuesto",
+        back_populates="proyecto"
+    )

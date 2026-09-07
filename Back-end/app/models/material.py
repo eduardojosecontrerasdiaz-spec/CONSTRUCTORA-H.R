@@ -39,3 +39,13 @@ class Material(db.Model):
         nullable=False,
         default=lambda: datetime.now(timezone.utc)
     )
+
+    precios = db.relationship(
+        "PrecioMaterial",
+        back_populates="material"
+    )
+
+    detalles_presupuesto = db.relationship(
+        "DetallePresupuesto",
+        back_populates="material"
+    )

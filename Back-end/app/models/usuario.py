@@ -60,3 +60,8 @@ class Usuario(db.Model):
         "CodigoRecuperacion",
         back_populates="usuario"
     )
+
+    proyectos = db.relationship(
+        "Proyecto",
+        back_populates="usuario"
+    )

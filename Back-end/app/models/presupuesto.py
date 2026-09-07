@@ -45,3 +45,13 @@ class Presupuesto(db.Model):
         db.String(500),
         nullable=True
     )
+
+    proyecto = db.relationship(
+        "Proyecto",
+        back_populates="presupuestos"
+    )
+
+    detalles = db.relationship(
+        "DetallePresupuesto",
+        back_populates="presupuesto"
+    )

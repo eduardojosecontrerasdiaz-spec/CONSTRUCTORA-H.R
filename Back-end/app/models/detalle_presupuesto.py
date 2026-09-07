@@ -37,3 +37,13 @@ class DetallePresupuesto(db.Model):
         nullable=False,
         default=0
     )
+
+    presupuesto = db.relationship(
+        "Presupuesto",
+        back_populates="detalles"
+    )
+
+    material = db.relationship(
+        "Material",
+        back_populates="detalles_presupuesto"
+    )
