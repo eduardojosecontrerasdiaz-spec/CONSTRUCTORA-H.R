@@ -44,3 +44,8 @@ class PrecioMaterial(db.Model):
         nullable=False,
         default=True
     )
+
+    material = db.relationship(
+        "Material",
+        back_populates="precios"
+    )
