@@ -45,3 +45,13 @@ class VersionPresupuesto(db.Model):
         nullable=False,
         default="activa"
     )
+
+    presupuesto = db.relationship(
+        "Presupuesto",
+        back_populates="versiones"
+    )
+
+    detalles = db.relationship(
+        "DetalleVersionPresupuesto",
+        back_populates="version"
+    )

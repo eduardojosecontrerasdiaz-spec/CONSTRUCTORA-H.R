@@ -37,3 +37,13 @@ class DetalleVersionPresupuesto(db.Model):
         nullable=False,
         default=0
     )
+
+    version = db.relationship(
+        "VersionPresupuesto",
+        back_populates="detalles"
+    )
+
+    material = db.relationship(
+        "Material",
+        back_populates="detalles_version_presupuesto"
+    )

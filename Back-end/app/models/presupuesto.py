@@ -55,3 +55,8 @@ class Presupuesto(db.Model):
         "DetallePresupuesto",
         back_populates="presupuesto"
     )
+
+    versiones = db.relationship(
+        "VersionPresupuesto",
+        back_populates="presupuesto"
+    )

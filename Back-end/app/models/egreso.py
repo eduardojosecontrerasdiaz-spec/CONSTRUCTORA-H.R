@@ -39,3 +39,8 @@ class Egreso(db.Model):
         nullable=False,
         default=True
     )
+
+    proyecto = db.relationship(
+        "Proyecto",
+        back_populates="egresos"
+    )

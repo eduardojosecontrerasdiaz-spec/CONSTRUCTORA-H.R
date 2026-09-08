@@ -59,3 +59,13 @@ class Proyecto(db.Model):
         "Presupuesto",
         back_populates="proyecto"
     )
+
+    ingresos = db.relationship(
+        "Ingreso",
+        back_populates="proyecto"
+    )
+
+    egresos = db.relationship(
+        "Egreso",
+        back_populates="proyecto"
+    )

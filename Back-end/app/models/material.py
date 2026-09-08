@@ -49,3 +49,13 @@ class Material(db.Model):
         "DetallePresupuesto",
         back_populates="material"
     )
+
+    detalles_version_presupuesto = db.relationship(
+        "DetalleVersionPresupuesto",
+        back_populates="material"
+    )
+
+    detalles_plantilla = db.relationship(
+        "DetallePlantilla",
+        back_populates="material"
+    )

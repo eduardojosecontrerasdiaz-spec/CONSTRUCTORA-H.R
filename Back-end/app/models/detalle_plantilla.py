@@ -37,3 +37,13 @@ class DetallePlantilla(db.Model):
         nullable=False,
         default=0
     )
+
+    plantilla = db.relationship(
+        "Plantilla",
+        back_populates="detalles"
+    )
+
+    material = db.relationship(
+        "Material",
+        back_populates="detalles_plantilla"
+    )

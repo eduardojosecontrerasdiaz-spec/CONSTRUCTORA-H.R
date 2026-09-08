@@ -65,3 +65,13 @@ class Usuario(db.Model):
         "Proyecto",
         back_populates="usuario"
     )
+
+    plantillas = db.relationship(
+        "Plantilla",
+        back_populates="usuario"
+    )
+
+    notificaciones = db.relationship(
+        "Notificacion",
+        back_populates="usuario"
+    )
