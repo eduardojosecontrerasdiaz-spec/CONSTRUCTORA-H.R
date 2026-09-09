@@ -1,11 +1,24 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export function LoginPage() {
   const [isRegistering, setIsRegistering] = useState(false);
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const switchMode = (event) => {
     event.preventDefault();
     setIsRegistering((currentMode) => !currentMode);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const username = formData.get('username');
+
+    login({ username });
+    navigate('/dashboard', { replace: true });
   };
 
   return (
@@ -33,9 +46,9 @@ export function LoginPage() {
               <SocialLinks />
             </form>
           ) : (
-            <form className="auth-form">
+            <form className="auth-form" onSubmit={handleLogin}>
               <h2>Login</h2>
-              <InputField type="text" placeholder="Username" icon="👤" />
+              <InputField type="text" name="username" placeholder="Username" icon="👤" />
               <InputField type="password" placeholder="Password" icon="🔒" />
               <a className="forgot-link" href="#forgot-password">Forgot Password?</a>
               <button className="auth-button" type="submit">Login</button>
@@ -49,11 +62,11 @@ export function LoginPage() {
   );
 }
 
-function InputField({ type, placeholder, icon }) {
+function InputField({ type, name, placeholder, icon }) {
   return (
     <label className="input-group">
       <span className="sr-only">{placeholder}</span>
-      <input type={type} placeholder={placeholder} />
+      <input type={type} name={name} placeholder={placeholder} required />
       <span aria-hidden="true">{icon}</span>
     </label>
   );

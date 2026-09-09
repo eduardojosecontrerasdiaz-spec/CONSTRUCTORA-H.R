@@ -8,6 +8,7 @@ import { PresupuestosPage } from './pages/presupuestos/PresupuestosPage';
 import { HistorialPage } from './pages/historial/HistorialPage';
 import { PlantillasPage } from './pages/plantillas/PlantillasPage';
 import { PreciosPage } from './pages/precios/PreciosPage';
+import Dashboard from './pages/dashboard/Dashboardpage';
 
 function App() {
   return (
@@ -20,6 +21,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <ProyectosPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
               </ProtectedRoute>
             }
           />
