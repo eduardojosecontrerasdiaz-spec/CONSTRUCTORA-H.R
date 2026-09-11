@@ -1,10 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --brand-orange: #ff6b35;
+  --brand-orange-dark: #ff5722;
+  --surface: #ffffff;
+  --page-background: #f8f8f7;
+  --text-primary: #1a1a1a;
+  --text-secondary: #718096;
+  --border-soft: #dedbd5;
+  --success-background: #e6f4ea;
+  --success-text: #1e7e34;
+  --pending-background: #fef3d6;
+  --pending-text: #8a6414;
+  --neutral-background: #edf2f7;
+  --alert: #e53e3e;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #252525;
-  background: #eef1ff;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--page-background);
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo-text,
+.stat-number {
+  font-family: var(--font-heading);
+}
+
+.stat-number,
+.project-date {
+  font-variant-numeric: tabular-nums;
 }
