@@ -75,3 +75,8 @@ class Usuario(db.Model):
         "Notificacion",
         back_populates="usuario"
     )
+
+    auditorias = db.relationship(
+        "Auditoria",
+        back_populates="usuario"
+    )

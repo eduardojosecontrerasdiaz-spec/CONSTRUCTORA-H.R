@@ -43,3 +43,8 @@ class Auditoria(db.Model):
         nullable=False,
         default=lambda: datetime.now(timezone.utc)
     )
+
+    usuario = db.relationship(
+        "Usuario",
+        back_populates="auditorias"
+    )
