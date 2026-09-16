@@ -27,6 +27,11 @@ class Material(db.Model):
         db.String(50),
         nullable=False
     )
+    
+    precio_material = db.Column(
+        db.Numeric(12, 2),
+        nullable=False
+    )
 
     estado = db.Column(
         db.Boolean,
@@ -38,11 +43,6 @@ class Material(db.Model):
         db.DateTime,
         nullable=False,
         default=lambda: datetime.now(timezone.utc)
-    )
-
-    precios = db.relationship(
-        "PrecioMaterial",
-        back_populates="material"
     )
 
     detalles_presupuesto = db.relationship(

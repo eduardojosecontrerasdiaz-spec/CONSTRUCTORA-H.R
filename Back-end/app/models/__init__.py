@@ -5,7 +5,6 @@ from app.models.usuario import Usuario
 from app.models.codigo_recuperacion import CodigoRecuperacion
 from app.models.proyecto import Proyecto
 from app.models.material import Material
-from app.models.precio_material import PrecioMaterial
 from app.models.presupuesto import Presupuesto
 from app.models.detalle_presupuesto import DetallePresupuesto
 from app.models.version_presupuesto import VersionPresupuesto
@@ -25,7 +24,6 @@ __all__ = [
     "CodigoRecuperacion",
     "Proyecto",
     "Material",
-    "PrecioMaterial",
     "Presupuesto",
     "DetallePresupuesto",
     "VersionPresupuesto",
