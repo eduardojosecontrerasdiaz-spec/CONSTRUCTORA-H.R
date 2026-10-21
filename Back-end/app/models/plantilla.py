@@ -40,3 +40,13 @@ class Plantilla(db.Model):
         nullable=False,
         default=lambda: datetime.now(timezone.utc)
     )
+
+    usuario = db.relationship(
+        "Usuario",
+        back_populates="plantillas"
+    )
+
+    detalles = db.relationship(
+        "DetallePlantilla",
+        back_populates="plantilla"
+    )
