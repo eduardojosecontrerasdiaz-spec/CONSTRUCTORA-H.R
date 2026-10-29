@@ -30,5 +30,10 @@ def create_app():
 
     with app.app_context():
         from app import models
+        from app.routes.presupuesto_routes import presupuesto_bp
 
+        app.register_blueprint(
+            presupuesto_bp,
+            url_prefix="/api"
+        )
     return app
