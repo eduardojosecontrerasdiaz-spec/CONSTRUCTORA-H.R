@@ -4,6 +4,8 @@ import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { LoginPage } from './pages/auth/LoginPage';
 import { ProyectosPage } from './pages/proyectos/ProyectosPage';
+import { ClientesPage } from './pages/clientes/ClientesPage';
+import { ReportesPage } from './pages/reportes/ReportesPage';
 import { PresupuestosPage } from './pages/presupuestos/PresupuestosPage';
 import { HistorialPage } from './pages/historial/HistorialPage';
 import { PlantillasPage } from './pages/plantillas/PlantillasPage';
@@ -21,6 +23,30 @@ function App() {
             element={
               <ProtectedRoute>
                 <ProyectosPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/proyectos"
+            element={
+              <ProtectedRoute>
+                <ProyectosPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/clientes"
+            element={
+              <ProtectedRoute>
+                <ClientesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/reportes"
+            element={
+              <ProtectedRoute>
+                <ReportesPage />
               </ProtectedRoute>
             }
           />

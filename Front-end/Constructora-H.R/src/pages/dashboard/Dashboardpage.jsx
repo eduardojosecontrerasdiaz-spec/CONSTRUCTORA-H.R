@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 export default function Dashboard() {
   return (
     <div className="dashboard">
@@ -17,40 +19,47 @@ export default function Dashboard() {
         </div>
 
         <div className="welcome">
-          Bienvenido
+          <small>Bienvenido</small>
+          <strong>Juan Rodríguez</strong>
+          <small>Jefe</small>
         </div>
 
         <nav className="sidebar-menu">
 
-          <a href="#" className="menu-item active">
+          <NavLink to="/dashboard" end className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
             <span className="menu-icon">▦</span>
             <span>Dashboard</span>
-          </a>
+          </NavLink>
 
-          <a href="#" className="menu-item">
+          <NavLink to="/proyectos" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
             <span className="menu-icon">▣</span>
             <span>Proyectos</span>
-          </a>
+          </NavLink>
 
-          <a href="#" className="menu-item">
+          <NavLink to="/clientes" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
             <span className="menu-icon">♙</span>
             <span>Clientes</span>
-          </a>
+          </NavLink>
 
-          <a href="#" className="menu-item">
+          <NavLink to="/precios" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
             <span className="menu-icon">$</span>
             <span>Precios</span>
-          </a>
+          </NavLink>
 
-          <a href="#" className="menu-item">
+          <NavLink to="/presupuestos" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
             <span className="menu-icon">▤</span>
             <span>Nuevo Presupuesto</span>
-          </a>
+          </NavLink>
 
-          <a href="#" className="menu-item">
+          <NavLink to="/reportes" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
+            <span className="menu-icon">▥</span>
+            <span>Reportes</span>
+          </NavLink>
+
+          <NavLink to="/historial" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
             <span className="menu-icon">◴</span>
             <span>Historial</span>
-          </a>
+          </NavLink>
 
         </nav>
 
@@ -162,7 +171,7 @@ export default function Dashboard() {
 
             <div className="quick-access">
 
-              <a href="#" className="quick-card">
+              <NavLink to="/presupuestos" className="quick-card">
 
                 <div className="quick-icon orange">
                   ▤
@@ -172,10 +181,10 @@ export default function Dashboard() {
                   Crear Presupuesto
                 </span>
 
-              </a>
+              </NavLink>
 
 
-              <a href="#" className="quick-card">
+              <NavLink to="/precios" className="quick-card">
 
                 <div className="quick-icon orange">
                   $
@@ -185,10 +194,10 @@ export default function Dashboard() {
                   Consultar Precios
                 </span>
 
-              </a>
+              </NavLink>
 
 
-              <a href="#" className="quick-card">
+              <NavLink to="/proyectos" className="quick-card">
 
                 <div className="quick-icon black">
                   ▣
@@ -198,10 +207,10 @@ export default function Dashboard() {
                   Ver Proyectos
                 </span>
 
-              </a>
+              </NavLink>
 
 
-              <a href="#" className="quick-card">
+              <NavLink to="/clientes" className="quick-card">
 
                 <div className="quick-icon gray-dark">
                   ♧
@@ -211,7 +220,7 @@ export default function Dashboard() {
                   Clientes
                 </span>
 
-              </a>
+              </NavLink>
 
             </div>
 
@@ -224,10 +233,10 @@ export default function Dashboard() {
             <div className="section-header">
               <h2>PROYECTOS RECIENTES</h2>
 
-              <a href="#" className="view-all">
+              <NavLink to="/proyectos" className="view-all">
                 Ver todos
                 <span>↻</span>
-              </a>
+              </NavLink>
             </div>
 
 
