@@ -238,9 +238,15 @@ class TestPresupuestoServiceFinalAuditComplete(unittest.TestCase):
             )
 
         self.assertIn(
-            "excede el límite máximo permitido para Numeric(14,2)",
+            "El subtotal excede el límite máximo permitido",
             str(ctx.exception),
         )
+
+        self.assertIn(
+            "9999999999.99",
+            str(ctx.exception),
+        )
+
         mock_db_session.rollback.assert_called()
 
     @patch("app.services.presupuesto_service.db.session")
