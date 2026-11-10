@@ -5,6 +5,8 @@ from app.models.usuario import Usuario
 from app.models.codigo_recuperacion import CodigoRecuperacion
 from app.models.proyecto import Proyecto
 from app.models.material import Material
+from app.models.material_proveedor import MaterialProveedor
+from app.models.historial_precio_material import HistorialPrecioMaterial
 from app.models.presupuesto import Presupuesto
 from app.models.detalle_presupuesto import DetallePresupuesto
 from app.models.version_presupuesto import VersionPresupuesto
@@ -24,6 +26,8 @@ __all__ = [
     "CodigoRecuperacion",
     "Proyecto",
     "Material",
+    "MaterialProveedor",
+    "HistorialPrecioMaterial",
     "Presupuesto",
     "DetallePresupuesto",
     "VersionPresupuesto",

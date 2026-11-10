@@ -59,3 +59,9 @@ class Material(db.Model):
         "DetallePlantilla",
         back_populates="material"
     )
+
+    materiales_proveedores = db.relationship(
+        "MaterialProveedor",
+        back_populates="material",
+        cascade="save-update, merge"
+    )
